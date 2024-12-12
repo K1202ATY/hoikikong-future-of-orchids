@@ -7,9 +7,51 @@
 
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Rubik", sans-serif;
     line-height: 1.6;
     padding-top: 55px;
+}
+
+h1 {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 2.5rem; /* Larger base size */
+    line-height: 1.2; /* Improved readability */
+    margin-bottom: 1.5rem; /* Add some spacing below */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Slightly smaller on mobile but still prominent */
+    }
+}
+
+/* For even smaller screens */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+h2 {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 2.2rem; /* Slightly smaller than h1 but still large */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* For even smaller screens */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+    }
 }
 
 header {
@@ -40,13 +82,14 @@ header a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+    font-family: "Dela Gothic One", sans-serif;
     font-weight: normal;
     transition: all 0.3s ease;
 }
 
 header a:hover {
     text-decoration: underline; /* Add underline on hover */
-    font-weight: bold; /* Make text bold on hover */
+    text-shadow: 3px 3px 0 #000000;
 }
 
 .hero {
@@ -115,11 +158,19 @@ header a:hover {
 .largerP {
     font-size: 1.2em;
     font-weight: bold;
+    margin: 1.5rem 0;
 }
 
 #about {
     text-align: center;
     padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.about .largerP {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-grid {
@@ -192,6 +243,16 @@ header a:hover {
     }
 }
 
+.orchids {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.orchids-cover {
+    width: 100%;
+}
+
 #orchids {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -201,31 +262,125 @@ header a:hover {
 }
 
 .card {
-    background: #8edeb2be;
-    padding: 2rem 4rem;
-    border: 1px solid #ddd;
+    background: #8edeb281;
+    padding: 2rem;
+    border-width: 30px 0 0 0; /* top right bottom left */
+    border-style: solid;
+    border-color: #8edeb2;
     border-radius: 10px;
 }
 
+.card .largerP {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card img {
+    width: 100%;
+    height: 600px; /* Adjust this height as needed */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin: 1.5rem 0;
+}
+
+.card p {
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem 2rem;
+    }
+
+    .card img {
+        height: 300px;
+    }
+}
 .speciesIntro {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 .species-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 20px;
     width: 100%;
 }
 
 .species-grid .item {
+    aspect-ratio: 1/1;
     background: #f5f5f5;
     border-radius: 10px;
     overflow: hidden;
+}
+
+/* Style for the model container */
+.model-container {
+    width: 100%;
+    height: 100%;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 100%; /* Ensure it fills the container */
+    display: block; /* Remove any default spacing */
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+#ar-button {
+    background-color: #8edeb2 !important;
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 8px 16px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 2; /* Ensure button appears above model */
+}
+
+#ar-button:hover {
+    background-color: #7bc99f !important;
+}
+
+/* Hide AR button on unsupported devices */
+#ar-button.ar-button[ar-status="not-presenting"] {
+    display: none;
+}
+
+/* First row items */
+.species-grid .item:nth-child(1) { 
+    grid-column: span 4;
+}
+.species-grid .item:nth-child(2) { 
+    grid-column: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .species-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .species-grid .item {
+        grid-column: 1 !important;
+    }
+    
+    model-viewer {
+        min-height: 300px; /* Minimum height for mobile */
+    }
 }
 
 .species-grid .item img {
@@ -236,9 +391,12 @@ header a:hover {
 
 .species-grid .text-content {
     padding: 2rem;
+    border-width: 30px 0 0 0;
+    border-style: solid;
+    border-color: #8edeb281;
+    overflow-y: auto; /* Makes content scrollable */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 1rem;
 }
 
@@ -247,11 +405,46 @@ header a:hover {
 .species-grid .item:nth-child(4),
 .species-grid .item:nth-child(5) {
     grid-row: 2;
+    overflow: hidden;
+}
+
+.species-grid .item:nth-child(3) img,
+.species-grid .item:nth-child(4) img,
+.species-grid .item:nth-child(5) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+
+.species-grid .item:nth-child(3):hover img,
+.species-grid .item:nth-child(4):hover img,
+.species-grid .item:nth-child(5):hover img {
+    transform: scale(1.25); /* Zoom level - adjust as needed */
 }
 
 .species-grid .item:nth-child(3) { grid-column: 1/2; }
 .species-grid .item:nth-child(4) { grid-column: 2/3; }
 .species-grid .item:nth-child(5) { grid-column: 3/4; }
+
+/* Add custom scrollbar styling */
+.species-grid .text-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.species-grid .text-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.species-grid .text-content::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+    border-radius: 4px;
+}
+
+.species-grid .text-content::-webkit-scrollbar-thumb:hover {
+    background: #2d2d2d;
+}
 
 /* Second row spans full width with 3 columns */
 @media (min-width: 769px) {
@@ -321,6 +514,17 @@ header a:hover {
     color: white;
     cursor: pointer;
     position: relative;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.question:hover {
+    background: linear-gradient(90deg, 
+        #ff8ac4 0%,    /* Lighter Pink */
+        #6188ff 33%,   /* Lighter Blue */
+        #4cd688 66%,   /* Lighter Green */
+        #ab8ee6 100%   /* Lighter Purple */
+    );
+    transform: translateX(10px); /* Slight shift to the right */
 }
 
 .answer {
@@ -354,6 +558,11 @@ header a:hover {
     .faq-item.active .answer {
         padding: 1rem;
     }
+}
+
+.about, .orchids, .speciesIntro, .faq {
+    max-width: 1440px;
+    margin: 0 auto; /* Center the sections horizontally */
 }
 
 footer {
