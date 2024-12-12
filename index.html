@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Future of Orchids: Conservation and Collaboration</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="top-nav">
@@ -53,8 +60,8 @@
             <img src="images/vc03.png" alt="Gallery Image 2">
             <img src="images/pr02.png" alt="Gallery Image 3">
             <img src="images/pr03.png" alt="Gallery Image 4">
-            <img src="images/vc03.png" alt="Gallery Image 5">
-            <img src="images/vc02.png" alt="Gallery Image 6">
+            <img src="images/lv03.png" alt="Gallery Image 5">
+            <img src="images/lv02.png" alt="Gallery Image 6">
             <img src="images/am03.png" alt="Gallery Image 7">
             <img src="images/am02.png" alt="Gallery Image 8">
         </div>
@@ -83,22 +90,35 @@
         </div>
 
         <div class="orchids" id="orchids">
-            <div class="card">
-                <h2>Orchids Collection</h2>
-                <p class="largerP">The Smithsonian Gardens Orchid Collection is one of the largest and most diverse orchid collections in the world, with over 4,000 specimens.<br></p>
-                <p>The collection serves as a vital conservation resource by offering protection to orchid species from threats such as habitat change and over-collecting. The collection is fully digitized, with high-quality images readily available online, supporting biodiversity conservation, scientific research, educational programming, and storytelling efforts.</p>
+            <div class="orchids-cover">
+                <div class="card">
+                    <h2>Orchids Collection</h2>
+                    <p class="largerP">The Smithsonian Gardens Orchid Collection is one of the largest and most diverse orchid collections in the world,<br>with over 4,000 specimens.</p>
+                    <img src="images/DisplayImg_all.png" alt="Orchids Cover">
+                    <p>The collection serves as a vital conservation resource by offering protection to orchid species from threats such as habitat change and over-collecting. The collection is fully digitized, with high-quality images readily available online, supporting biodiversity conservation, scientific research, educational programming, and storytelling efforts.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="speciesIntro">
         <div class="species-grid">
+            <div class="item">
+                <model-viewer
+                    src="models/amModel.glb" 
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls tone-mapping="neutral"
+                    poster="models/amPoster.png"
+                    shadow-intensity="1">
+                    <button slot="ar-button" id="ar-button">
+                        👋 Activate AR
+                    </button>
+                </model-viewer>                               
+            </div>
             <div class="item text-content">
                 <h3>Angraecum Magdalenae</h3>
                 <p>Angraecum magdalenae, commonly known as "Madeleine's Angraecum" or "The Snow-White Angraecum," is an orchid species endemic to Madagascar. It is known for its striking large, fleshy, white flowers that emit a delightful, spicy, jasmine-like fragrance, especially prominent at night.<br><br>This orchid is a lithophyte, meaning it grows on rocks. Its preferred habitat is near quartzite boulders nestled in leaf litter at altitudes ranging from 800 to 2000 meters.<br><br>The circumstances surrounding the discovery of Angraecum magdalenae are shrouded in some ambiguity. While officially attributed to the French naturalist H. Perrier, there is a suggestion that a woman named Madeleine, who later became Perrier's wife, might have been the first to encounter the orchid. This detail adds a layer of intrigue to the species' history.<br><br>Angraecum magdalenae is currently housed within the Smithsonian Gardens Orchid Collection. However, the specific details regarding its acquisition date remain unspecified in the sources.</p>
-            </div>
-            <div class="item">
-                <img src="images/species1.jpg" alt="3D Model">
             </div>
             <div class="item">
                 <img src="images/am02.png" alt="Angraecum Magdalenae">
@@ -114,12 +134,19 @@
 
     <section class="speciesIntro">
         <div class="species-grid">
+            <div class="item">
+                <model-viewer
+                    src="models/lvModel.glb" 
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls tone-mapping="neutral"
+                    poster="models/lvPoster.png"
+                    shadow-intensity="1">
+                </model-viewer>                
+            </div>
             <div class="item text-content">
                 <h3>Lycaste Virginalis</h3>
                 <p>Lycaste virginalis, also known as Lycaste skinneri var. alba, is a captivating orchid species native to the cloud forests of Guatemala and southern Mexico. It is celebrated for its exquisite beauty and cultural significance, holding the esteemed title of Guatemala's national flower, where it is affectionately called "Monja Blanca" (White Nun).<br><br>This orchid is an epiphyte, thriving in the cool, humid conditions of cloud forests where it grows on the branches of trees. It produces large, waxy, triangular-shaped flowers that are a pristine white with a subtle yellow hue at the base of the lip. The flowers are renowned for their long-lasting nature and delightful fragrance.<br><br>Lycaste virginalis has faced a turbulent history marked by over-collection driven by its popularity among orchid enthusiasts. Its introduction to the European orchid scene in the late 1800s led to extensive harvesting from its native habitats, almost decimating wild populations. By the 1930s, this once-abundant orchid had become a rarity.<br><br>In response to the dwindling numbers, the Guatemalan government implemented the first protection order for Lycaste virginalis in the 1940s, prohibiting its collection. However, the threat of poaching persisted. To strengthen conservation efforts, the government extended its protection to encompass all orchid species in the 1990s, banning their export until the decade's end.<br><br>Today, Lycaste virginalis remains a threatened species, a poignant reminder of the fragility of natural beauty in the face of human impact.<br><br>Conservation efforts continue to safeguard its future, ensuring that this iconic orchid continues to grace the cloud forests of Guatemala and inspire awe for generations to come.</p>
-            </div>
-            <div class="item">
-                <img src="images/species1.jpg" alt="3D Model">
             </div>
             <div class="item">
                 <img src="images/lv02.png" alt="Lycaste Virginalis">
@@ -135,12 +162,19 @@
 
     <section class="speciesIntro">
         <div class="species-grid">
+            <div class="item">
+                <model-viewer
+                    src="models/vcModel.glb" 
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls tone-mapping="neutral"
+                    poster="models/vcPoster.png"
+                    shadow-intensity="1">
+                </model-viewer>  
+            </div>
             <div class="item text-content">
                 <h3>Vanda Coerulea</h3>
                 <p>Vanda coerulea, commonly referred to as "The Blue Vanda", is a captivating orchid species renowned for its vibrant blue flowers. Native to the Eastern Himalayas and Southeast Asia, this orchid has historically been valued for its medicinal properties in India, traditionally used to treat ailments such as chest conditions, diarrhea, and dysentery.<br><br>The introduction of Vanda coerulea to Europe in 1847 marked a significant event in the world of horticulture. Its striking blue blooms, a rarity among orchids, sparked a surge of excitement and interest, leading to numerous expeditions aimed at collecting this botanical treasure. Unfortunately, this enthusiasm contributed to over-collection, jeopardizing the species' survival in its natural habitat.<br><br>Vanda coerulea is an epiphytic orchid, meaning it grows on trees, specifically favouring exposed, dwarf oak trees in forests with a distinct dry season. It flourishes at elevations ranging from 800 to 1700 meters, adapting to the specific conditions of its mountainous habitat.</p>
-            </div>
-            <div class="item">
-                <img src="images/species1.jpg" alt="3D Model">
             </div>
             <div class="item">
                 <img src="images/vc02.png" alt="Vanda Coerulea">
@@ -156,21 +190,28 @@
 
     <section class="speciesIntro">
         <div class="species-grid">
+            <div class="item">
+                <model-viewer
+                    src="models/prModel.glb" 
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls tone-mapping="neutral"
+                    poster="models/prPoster.png"
+                    shadow-intensity="1">
+                </model-viewer> 
+            </div>
             <div class="item text-content">
                 <h3>Phragmipedium × Richteri 'Wolf River'</h3>
                 <p>Phragmipedium × Richteri 'Wolf River', also known as Richter's Phragmipedium selection, is an orchid cultivar. It is currently on display at the Smithsonian Gardens' National Portrait Gallery in the Kogod Courtyard. This particular orchid was cultivated and does not have a known wild origin.</p>
             </div>
             <div class="item">
-                <img src="images/species1.jpg" alt="3D Model">
+                <img src="images/pr02.png" alt="Phragmipedium × Richteri 'Wolf River'">
             </div>
             <div class="item">
-                <img src="images/lv02.png" alt="Phragmipedium × Richteri 'Wolf River'">
+                <img src="images/pr03.png" alt="Phragmipedium × Richteri 'Wolf River'">
             </div>
             <div class="item">
-                <img src="images/lv03.png" alt="Phragmipedium × Richteri 'Wolf River'">
-            </div>
-            <div class="item">
-                <img src="images/lv01.png" alt="Phragmipedium × Richteri 'Wolf River'">
+                <img src="images/pr01.png" alt="Phragmipedium × Richteri 'Wolf River'">
             </div>
         </div>
     </section>
@@ -210,5 +251,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    
 </body>
 </html>
